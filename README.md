@@ -11,6 +11,7 @@ https://demos.conterra.de/mapapps/resources/apps/downloads_charting/index.html
 **Requirement: map.apps 4.9.0**
 
 [dn_mapextentstorage Documentation](https://github.com/conterra/mapapps-map-extent-storage/tree/master/src/main/js/bundles/dn_mapextentstorage)
+
 [dn_mapextentstoragemanager Documentation](https://github.com/conterra/mapapps-map-extent-storage/tree/master/src/main/js/bundles/dn_mapextentstoragemanager)
 
 ## Development Guide
