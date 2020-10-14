@@ -48,7 +48,7 @@
                         "id": "defaultToolSet",
                         "tools": [
                             "mapExtentStorageToggleTool",
-                            "manageToggleTool",
+                            "mapExtentStorageManagerToggleTool",
                             "viewmodeSwitcherTool"
                         ],
                         "registerWidget": {
@@ -102,6 +102,11 @@
                     },
                     "scale": 140000
                 }
+            }
+        },
+        "dn_mapextentstorage": {
+            "MapExtentStorage": {
+                "activeByDefault": true
             }
         }
     }

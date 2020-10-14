@@ -51,7 +51,13 @@
             }, {
                 "name": "windowManager",
                 "providing": "ct.framework.api.WindowManager"
-            }]}
+            }, {
+                "name": "toggletool",
+                "providing": "ct.tools.Tool",
+                "filter": "(id=mapExtentStorageToggleTool)",
+                "cardinality": "0..1"
+            }
+        ]}
         ]
     }]
 }

@@ -15,7 +15,7 @@
             "attachTo": "manager-tabbed-window",
             "window": {
                 "autofocus": false,
-                "dockTool": "manageToggleTool",
+                "dockTool": "mapExtentStorageManagerToggleTool",
                 "marginBox": {
                     "h": 300
                 },
@@ -39,14 +39,14 @@
                     "providing": "ct.framework.api.WindowManager"
                 }]
         }, {
-            "name": "ManageToggleTool",
+            "name": "mapExtentStorageManagerToggleTool",
             "impl": "ct/tools/Tool",
             "provides": [
                 "ct.tools.Tool"
             ],
             "propertiesConstructor": true,
             "properties": {
-                "id": "manageToggleTool",
+                "id": "mapExtentStorageManagerToggleTool",
                 "title": "${tool.title}",
                 "iconClass": "icon-list-grid",
                 "toolRole": "toolset",

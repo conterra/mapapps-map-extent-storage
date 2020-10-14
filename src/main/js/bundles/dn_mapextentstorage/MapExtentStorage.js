@@ -18,6 +18,12 @@ import apprt_request from "apprt-request";
 
 let view;
 let i18n;
+// event that indicates, that the storage of this session has changed
+let storageEvent;
+let appName;
+let viewParamRes;
+// is true if the function to save the map extent is activated
+let isActive = false;
 
 const waitForView = (model) => {
     return new Promise((resolve, reject) => {
@@ -30,12 +36,6 @@ const waitForView = (model) => {
         }
     });
 };
-
-// event that indicates, that the storage of this session has changed
-let storageEvent;
-
-let appName;
-let viewParamRes;
 
 class MapExtentStorage {
     activate() {
@@ -61,18 +61,30 @@ class MapExtentStorage {
         this.mapWidgetModel = undefined;
     }
 
-    activateSave() {
-        this.windowManager.createInfoDialogWindow({
-            title: "",
-            message: i18n.info.activationDialog,
-            closable: true,
-            showOk: true,
-            showCancel: false,
-            marginBox: {
-                w: 360,
-                h: 230
-            }
-        });
+    setToggletool(tool) {
+        tool.set("active", this._properties.activeByDefault)
+    }
+
+    activateSave(evt) {
+        if(isActive) {
+            return;
+        }
+        isActive = true;
+        if(evt && evt.tool && evt.tool.id === "mapExtentStorageToggleTool") {
+            this.windowManager.createInfoDialogWindow({
+                title: "",
+                message: i18n.info.activationDialog,
+                closable: true,
+                showOk: true,
+                showCancel: false,
+                marginBox: {
+                    w: 360,
+                    h: 230
+                }
+            });
+        }
+
+
         // initialize storageEvent
         storageEvent = document.createEvent("HTMLEvents");
         storageEvent.initEvent("localstorageSession", true, true);
@@ -102,6 +114,7 @@ class MapExtentStorage {
         this._viewWatchHandle.remove();
         this._viewWatchHandle = undefined;
         this.mapWidgetModel = undefined;
+        isActive = false;
     }
 
     loadAppParams(appName) {

@@ -9,9 +9,9 @@ This bundle makes it possible to view and delete the saved map extents of the lo
 
 To make the functions of this bundle available to the user, the following tool can be added to a toolset:
 
-| Tool ID          | Component        | Description                       |
-|------------------|------------------|-----------------------------------|
-| manageToggleTool | ManageToggleTool | Show or hide the widget |
+| Tool ID                           | Component                         | Description                       |
+|-----------------------------------|-----------------------------------|-----------------------------------|
+| mapExtentStorageManagerToggleTool | mapExtentStorageManagerToggleTool | Show or hide the widget           |
 
 ## Configuration Reference
 
