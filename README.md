@@ -12,7 +12,7 @@ browser. Here you can also delete unwanted extents. It works independently of th
 ![Screenshot: Map extent storage manager bundle](https://user-images.githubusercontent.com/48286621/95971014-ec339080-0e10-11eb-93b4-30e335f4c0a0.png)
 
 ## Sample App
-https://demos.conterra.de/mapapps/resources/apps/downloads_charting/index.html
+https://demos.conterra.de/mapapps/resources/apps/downloads_mapextentstorage/index.html
 
 ## Installation Guide
 **Requirement: map.apps 4.9.0**
