@@ -6,7 +6,6 @@
     "dependencies": {
         "map-widget": "^4.9.0"
     },
-    "main": "",
     "components": [{
         "name": "MapExtentStorageToggleTool",
         "impl": "ct/tools/Tool",
