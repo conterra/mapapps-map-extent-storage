@@ -11,7 +11,7 @@ To make the functions of this bundle available to the user, the following tool c
 
 | Tool ID          | Component        | Description                       |
 |------------------|------------------|-----------------------------------|
-| ManageToggleTool | ManageToggleTool | Show or hide the widget |
+| manageToggleTool | ManageToggleTool | Show or hide the widget |
 
 ## Configuration Reference
 
