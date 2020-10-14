@@ -17,7 +17,7 @@
             "attachTo": "manager-tabbed-window",
             "window": {
                 "autofocus": false,
-                "dockTool": "appmanagement_manageToggleTool",
+                "dockTool": "ManageToggleTool",
                 "marginBox": {
                     "h": 300
                 },
@@ -52,13 +52,7 @@
                 "title": "${tool.title}",
                 "iconClass": "icon-list-grid",
                 "toolRole": "toolset",
-                "togglable": true,
-                "rules": {
-                    "roles": [
-                        "maAdmin"
-                    ],
-                    "ruleSuccessProperty": "visibility"
-                }
+                "togglable": true
             },
             "references":[{
                 "name": "handlerScope",
