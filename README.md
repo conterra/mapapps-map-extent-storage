@@ -1,8 +1,15 @@
 # Map extent storage
 
-Description...
+The Map extent storage bundle saves the current map extent of your app and loads the last one when the app is opened again.
+The map extent is saved and loaded for each app separately and is stored in the local storage of your browser.
+The saving happens automatically each time you change the map extent. 
+![Screenshot: Map extent storage bundle](https://github.com/conterra/mapapps-map-extent-storage/blob/master/screenshot.JPG)
 
-![Screenshot App](https://github.com/conterra/mapapps-map-extent-storage/blob/master/screenshot.JPG)
+To view all map extents in your local storage use the map extent storage manager bundle.
+This bundle contains a widget that displays all map extents that are currently saved in the local storage of your 
+browser. Here you can also delete unwanted extents. It works independently of the "Save and load map extents bundle".
+
+![Screenshot: Map extent storage manager bundle](https://github.com/conterra/mapapps-map-extent-storage/blob/master/screenshot.JPG)
 
 ## Sample App
 https://demos.conterra.de/mapapps/resources/apps/downloads_charting/index.html

@@ -1,0 +1,58 @@
+{
+    "name": "dn_mapextentstorage",
+    "title": "${bundleName}",
+    "description": "${bundleDescription}",
+    "version": "0.0.9",
+    "dependencies": {
+        "map-widget": "4.9.2"
+    },
+    "main": "",
+    "components": [{
+        "name": "${tool.name}",
+        "impl": "ct/tools/Tool",
+        "provides": [
+            "ct.tools.Tool", "save_load_map_extent.SaveMapExtentToggleTool"
+        ],
+        "propertiesConstructor": true,
+        "properties": {
+            "id": "MapExtentStorageToggleTool",
+            "title": "${tool.title}",
+            "iconClass": "icon-extent",
+            "toolRole": "toolset",
+            "togglable": true,
+            "activateHandler": "activateSave",
+            "deactivateHandler": "deactivateSave",
+            "noGroup": true
+        },
+        "references": [
+            {
+                "name": "handlerScope",
+                "providing": "dn_mapextentstorage.MapExtentStorage"
+            }
+        ]
+    },{
+        "name": "MapExtentStorage",
+        "provides": "dn_mapextentstorage.MapExtentStorage",
+        "properties": {
+            "activeByDefault": false
+        },
+        "immediate": "true",
+        "references": [
+            {
+                "name": "appContext",
+                "providing": "ct.framework.api.ApplicationContext"
+            },
+            {
+                "name": "viewParameterResolver",
+                "providing": "parametermanager.Parametrizable",
+                "filter": "(Component-Name=ViewParameterResolver)"
+            }, {
+                "name": "mapWidgetModel",
+                "providing": "map-widget.MapWidgetModel"
+            }, {
+                "name": "windowManager",
+                "providing": "ct.framework.api.WindowManager"
+            }]}
+        ]
+    }]
+}

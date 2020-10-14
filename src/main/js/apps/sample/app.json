@@ -9,34 +9,17 @@
         ],
         "allowedBundles": [
             "system",
-            "console",
-            "notifier",
             "splashscreen",
             "templatelayout",
             "template-seasons",
             "theme-everlasting",
-            "theme-winter",
-            "theme-spring",
-            "theme-summer",
-            "theme-autumn",
-            "map-init",
-            "map-preload-2D",
-            "map-preload-3D",
             "toolset",
-            "banner",
-            "basemaptoggler",
-            "custominfo",
+            "map-init",
             "viewmodeswitcher",
-            "mapnavigation",
-            "popups-default",
-            "scalebar",
-            "locateme",
-            "printing",
-            "share-link",
-            "omnisearch",
-            "locator-store",
-            "toc",
-            "sample_helloworld"
+            "console",
+            "dn_mapextentstorage",
+            "dn_mapextentstoragemanager",
+            "bundletools"
         ],
         "require": [
             "${app}.app"
@@ -46,81 +29,21 @@
         ]
     },
     "bundles": {
-        "banner": {
-            "BannerWidget": {
-                "label": "Developer Network",
-                "image": "resource('${app}:/images/logo_conterra.png')",
-                "imageWidth": 200,
-                "imagePosition": "above",
-                "link": "http://developernetwork.conterra.de"
+        "toolset": {
+            "ToolsetManager": {
+                "toolsets": [
+                    {
+                        "id": "defaultToolSet",
+                        "tools": ["*"],
+                        "registerWidget": {
+                            "widgetRole": "map_topleft"
+                        },
+                        "container": "ignore",
+                        "windowType": "container",
+                        "cssClass": "muted"
+                    }
+                ]
             }
-        },
-        "basemaptoggler": {
-            "Config": {
-                "itemStyles": {
-                    "esri_street": "icon-thumbnail",
-                    "esri_hybrid": "icon-thumbnail",
-                    "esri_topo": "icon-thumbnail"
-                }
-            }
-        },
-        "custominfo": {
-            "CustomInfoToggleTool": [
-                {
-                    "widgetSettings": {
-                        "content": "${custominfo.imprint.content}",
-                        "window": {
-                            "marginBox": {
-                                "w": 320,
-                                "h": 500
-                            },
-                            "draggable": true,
-                            "closable": true,
-                            "modal": true,
-                            "maximizable": false,
-                            "resizable": true,
-                            "title": "${custominfo.imprint.title}"
-                        }
-                    },
-                    "type": "IMPRINT",
-                    "toolClass": "ctInfo",
-                    "title": "${custominfo.imprint.title}",
-                    "tooltip": "${custominfo.imprint.tooltip}",
-                    "tooltipPositions": [
-                        "after",
-                        "above",
-                        "below",
-                        "before"
-                    ],
-                    "iconClass": "icon-custom-info-imprint",
-                    "togglable": true,
-                    "id": "IMPRINT_Imprint_CustomInfoTool"
-                },
-                {
-                    "widgetSettings": {
-                        "content": "${custominfo.imprint.content}",
-                        "window": {
-                            "marginBox": {
-                                "w": "100%",
-                                "h": "100%"
-                            },
-                            "draggable": false,
-                            "closable": true,
-                            "modal": true,
-                            "maximizable": false,
-                            "resizable": false,
-                            "title": "${custominfo.imprint.title}"
-                        }
-                    },
-                    "type": "IMPRINT",
-                    "toolClass": "ctInfo",
-                    "title": "${custominfo.imprint.title}",
-                    "tooltip": "${custominfo.imprint.tooltip}",
-                    "iconClass": "icon-custom-info-imprint",
-                    "togglable": true,
-                    "id": "IMPRINT_Imprint_CustomInfoTool_mobile"
-                }
-            ]
         },
         "map-init": {
             "Config": {
@@ -480,110 +403,6 @@
                     },
                     "scale": 140000
                 }
-            }
-        },
-        "themes": {
-            "ThemeModel": {
-                "_selectedTheme": "everlasting"
-            },
-            "ThemeSelector": {
-                "componentEnabled": true
-            }
-        },
-        "templates": {
-            "TemplateModel": {
-                "_templates": [
-                    {
-                        "name": "seasons",
-                        "widgets": [
-                            {
-                                "widgetRole": "drawer_button",
-                                "attachTo": "map_topleft",
-                                "props": {
-                                    "layoutIndex": 0
-                                }
-                            },
-                            {
-                                "widgetRole": "sharelink",
-                                "window": {
-                                    "dockable": false,
-                                    "dockingBar": null
-                                }
-                            },
-                            {
-                                "widgetRole": "legend",
-                                "sublayout": [
-                                    "mobile_portrait",
-                                    "mobile_landscape"
-                                ],
-                                "window": {
-                                    "dockable": false,
-                                    "dockingBar": null
-                                }
-                            },
-                            {
-                                "widgetRole": "printing",
-                                "window": {
-                                    "dockable": false,
-                                    "dockingBar": null
-                                }
-                            },
-                            {
-                                "widgetRole": "banner",
-                                "sublayout": [
-                                    "mobile_portrait"
-                                ],
-                                "attachTo": "footer_right"
-                            }
-                        ]
-                    }
-                ]
-            }
-        },
-        "toc": {
-            "Config": {
-                "showBasemaps" : true
-            }
-        },
-        "toolset": {
-            "ToolsetManager": {
-                "toolsets": [
-                    {
-                        "id": "mapview_tools",
-                        "tools": [
-                            "locateMeTool",
-                            "zoomInTool",
-                            "zoomOutTool",
-                            "compassTool",
-                            "restoreInitialViewTool",
-                            "viewmodeSwitcherTool"
-                        ],
-                        "registerWidget": {
-                            "widgetRole": "mapview_tools"
-                        },
-                        "container": "ignore",
-                        "windowType": "container",
-                        "cssClass": "muted"
-                    },
-                    {
-                        "id": "drawer_left",
-                        "title": "Werkzeuge",
-                        "cssClass": "ct-main-app-menu",
-                        "tools": [
-                            "tocToggleTool",
-                            "printingToggleTool",
-                            "sharelinkTool",
-                            "helloTool",
-                            "IMPRINT_Imprint_CustomInfoTool",
-                            "IMPRINT_Imprint_CustomInfoTool_mobile"
-                        ],
-                        "registerWidget": {
-                            "widgetRole": "drawer_button"
-                        },
-                        "container": "ignore",
-                        "windowType": "drawer_left"
-                    }
-                ]
             }
         }
     }

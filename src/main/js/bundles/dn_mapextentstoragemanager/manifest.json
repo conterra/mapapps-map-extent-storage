@@ -1,0 +1,69 @@
+{
+    "name": "dn_mapextentstoragemanager",
+    "title": "Map Extent Manager",
+    "description": "This bundle makes it possible to manage the saved map extents in the local storage.",
+    "version": "0.0.9",
+    "main": "",
+    "layer": "module",
+    "dependencies": {
+        "apprt-core": "^4.8.3",
+        "apprt-binding": "^4.8.3",
+        "apprt-vue": "^4.8.3",
+        "moment": "2.24.0"
+    },
+    "layout-widgets": [
+        {
+            "widgetRole": "dn_mapextentstoragemanager",
+            "attachTo": "manager-tabbed-window",
+            "window": {
+                "autofocus": false,
+                "dockTool": "appmanagement_manageToggleTool",
+                "marginBox": {
+                    "h": 300
+                },
+                "minimizeOnClose": true
+            }
+        }
+    ],
+    "components": [{
+            "name": "MapExtentStorageManagerFactory",
+            "provides": ["dijit.Widget","dn_mapextentstoragemanager.Widget"],
+            "instanceFactory": true,
+            "properties": {
+                "widgetRole": "dn_mapextentstoragemanager"
+            },
+            "references": [
+                {
+                    "name": "appContext",
+                    "providing": "ct.framework.api.ApplicationContext"
+                }, {
+                    "name": "windowManager",
+                    "providing": "ct.framework.api.WindowManager"
+                }]
+        }, {
+            "name": "${tool.name}",
+            "impl": "ct/tools/Tool",
+            "provides": [
+                "ct.tools.Tool"
+            ],
+            "propertiesConstructor": true,
+            "properties": {
+                "id": "ManageToggleTool",
+                "title": "${tool.title}",
+                "iconClass": "icon-list-grid",
+                "toolRole": "toolset",
+                "togglable": true,
+                "rules": {
+                    "roles": [
+                        "maAdmin"
+                    ],
+                    "ruleSuccessProperty": "visibility"
+                }
+            },
+            "references":[{
+                "name": "handlerScope",
+                "providing": "dn_mapextentstoragemanager.Widget"
+            }]
+        }
+    ]
+}

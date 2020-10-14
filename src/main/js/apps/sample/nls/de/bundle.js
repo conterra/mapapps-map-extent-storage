@@ -14,14 +14,7 @@
  * limitations under the License.
  */
 module.exports = {
-    apptitle: "map.apps 4 Sample",
-    custominfo: {
-        imprint: {
-            title: "Impressum",
-            tooltip: "Zeige Impressum",
-            content: "<p>Dies ist ein Beispiel f\xFCr ein Impressum.</p>"
-        }
-    },
+    apptitle: "Map Extent Storage",
     map: {
         koeln1: {
             title: "Basisdaten",
