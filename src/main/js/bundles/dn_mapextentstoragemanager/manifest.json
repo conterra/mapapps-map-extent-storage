@@ -2,7 +2,7 @@
     "name": "dn_mapextentstoragemanager",
     "title": "Map Extent Manager",
     "description": "This bundle makes it possible to manage the saved map extents in the local storage.",
-    "version": "1.0.1-SNAPSHOT",
+    "version": "1.0.1",
     "dependencies": {
         "apprt-core": "^4.9.0",
         "apprt-binding": "^4.9.0",
