@@ -47,7 +47,9 @@
                     {
                         "id": "defaultToolSet",
                         "tools": [
-                            "*"
+                            "mapExtentStorageToggleTool",
+                            "manageToggleTool",
+                            "viewmodeSwitcherTool"
                         ],
                         "registerWidget": {
                             "widgetRole": "map_topleft"
