@@ -18,8 +18,7 @@ module.exports = {
         bundleName: "map extent storage",
         bundleDescription: "This bundle saves/loads the properties of the current map extent from/in the local storage of the browser",
         tool: {
-            title: "map extent storage",
-            name: "MapExtentStorageToggleTool"
+            title: "map extent storage"
         },
         info: {
             activationDialog: "Saving and loading of the map extent is enabled. " +

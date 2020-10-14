@@ -18,8 +18,7 @@ module.exports = {
     bundleDescription: "Dieses Bundle speichert den aktuellen Kartenauschnitt im local storage des Browsers und liest ihn " +
         "beim erneuten Laden der App wieder aus.",
     tool: {
-        title: "Kartenauschnittsspeicher",
-        name: "MapExtentStorageToggleTool"
+        title: "Kartenauschnittsspeicher"
     },
     info: {
         activationDialog: "Das Speichern und Laden des Kartenausschnitts ist aktiv. " +

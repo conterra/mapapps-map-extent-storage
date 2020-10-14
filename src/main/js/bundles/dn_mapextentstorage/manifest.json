@@ -2,20 +2,20 @@
     "name": "dn_mapextentstorage",
     "title": "${bundleName}",
     "description": "${bundleDescription}",
-    "version": "0.0.9",
+    "version": "1.0.0",
     "dependencies": {
-        "map-widget": "4.9.2"
+        "map-widget": "^4.9.0"
     },
     "main": "",
     "components": [{
-        "name": "${tool.name}",
+        "name": "MapExtentStorageToggleTool",
         "impl": "ct/tools/Tool",
         "provides": [
-            "ct.tools.Tool", "save_load_map_extent.SaveMapExtentToggleTool"
+            "ct.tools.Tool"
         ],
         "propertiesConstructor": true,
         "properties": {
-            "id": "MapExtentStorageToggleTool",
+            "id": "mapExtentStorageToggleTool",
             "title": "${tool.title}",
             "iconClass": "icon-extent",
             "toolRole": "toolset",

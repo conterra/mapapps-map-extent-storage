@@ -17,8 +17,7 @@ module.exports = {
     bundleName: "Kartenausschnittsmanager",
     bundleDescription: "Dieses bundle ermöglicht das verwalten von Kartenausschnitten, die im local storage hinterlegt wurden.",
     tool: {
-        title: "Kartenausschnittsmanager",
-        name: "ManageToggleTool"
+        title: "Kartenausschnittsmanager"
     },
     ui: {
         description: "Hier sind alle Kartenausschnitte, die im local storage hinterlegt sind.",

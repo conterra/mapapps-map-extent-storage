@@ -2,14 +2,14 @@
     "name": "dn_mapextentstoragemanager",
     "title": "Map Extent Manager",
     "description": "This bundle makes it possible to manage the saved map extents in the local storage.",
-    "version": "0.0.9",
+    "version": "1.0.0",
     "main": "",
     "layer": "module",
     "dependencies": {
-        "apprt-core": "^4.8.3",
-        "apprt-binding": "^4.8.3",
-        "apprt-vue": "^4.8.3",
-        "moment": "2.24.0"
+        "apprt-core": "^4.9.0",
+        "apprt-binding": "^4.9.0",
+        "apprt-vue": "^4.9.0",
+        "moment": "^2.24.0"
     },
     "layout-widgets": [
         {
@@ -17,7 +17,7 @@
             "attachTo": "manager-tabbed-window",
             "window": {
                 "autofocus": false,
-                "dockTool": "ManageToggleTool",
+                "dockTool": "manageToggleTool",
                 "marginBox": {
                     "h": 300
                 },
@@ -41,14 +41,14 @@
                     "providing": "ct.framework.api.WindowManager"
                 }]
         }, {
-            "name": "${tool.name}",
+            "name": "ManageToggleTool",
             "impl": "ct/tools/Tool",
             "provides": [
                 "ct.tools.Tool"
             ],
             "propertiesConstructor": true,
             "properties": {
-                "id": "ManageToggleTool",
+                "id": "manageToggleTool",
                 "title": "${tool.title}",
                 "iconClass": "icon-list-grid",
                 "toolRole": "toolset",

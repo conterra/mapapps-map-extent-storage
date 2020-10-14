@@ -18,8 +18,7 @@ module.exports = {
         bundleName: "Map Extent Storage Manager",
         bundleDescription: "This bundle makes it possible to manage the saved map extents in the local storage.",
         tool: {
-            title: "Map Extent Storage Manager",
-            name: "ManageToggleTool"
+            title: "Map Extent Storage Manager"
         },
         ui: {
             description: "Here are all Map Extents that are saved in the Local Storage of your browser.",
