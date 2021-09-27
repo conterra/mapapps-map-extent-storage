@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.12.0] - 2021-09-27
+
+- Support for map.apps 4.12.0
+- adjust `./pom.xml` and `./gulpfile.js` according to newest blueprint
+- fix linting errors and warnings
+- import vuetify in `dn_mapextentstoragemanager/manifest.json`
+- adjust readme
+
+- Change `mapapps.version` property in `./pom.xml`  to `4.12.0`
+
 ## [4.9.1] - 2020-09-04
 
 - Support for map.apps 4.9.1
