@@ -25,17 +25,15 @@ let viewParamRes;
 // is true if the function to save the map extent is activated
 let isActive = false;
 
-const waitForView = (model) => {
-    return new Promise((resolve, reject) => {
-        if (model.view) {
-            resolve(model.view);
-        } else {
-            model.watch("view", ({value}) => {
-                resolve(value);
-            });
-        }
-    });
-};
+const waitForView = (model) => new Promise((resolve) => {
+    if (model.view) {
+        resolve(model.view);
+    } else {
+        model.watch("view", ({value}) => {
+            resolve(value);
+        });
+    }
+});
 
 class MapExtentStorage {
     activate() {
@@ -43,7 +41,7 @@ class MapExtentStorage {
             return;
         }
         i18n = this._i18n.get();
-        let model = this.mapWidgetModel;
+        const model = this.mapWidgetModel;
 
         return waitForView(model).then(value => {
             appName = this.appContext.getApplicationName();
@@ -90,13 +88,13 @@ class MapExtentStorage {
         storageEvent.initEvent("localstorageSession", true, true);
         storageEvent.eventName = "localstorageSession";
 
-        let model = this.mapWidgetModel;
+        const model = this.mapWidgetModel;
 
         this.loadAppParams(appName);
         this.watchChangesInView(view);
 
         model.watch("view", ({value}) => {
-                this.watchChangesInView(value);
+            this.watchChangesInView(value);
         });
     }
     deactivateSave() {
@@ -122,9 +120,9 @@ class MapExtentStorage {
             return;
         }
         // load parameters from previous session
-        let allUrlParams = JSON.parse(localStorage.getItem('urlParams'));
+        const allUrlParams = JSON.parse(localStorage.getItem('urlParams'));
         if (allUrlParams) {
-            let specificUrlParams = allUrlParams.find(x => x.appName === appName);
+            const specificUrlParams = allUrlParams.find(x => x.appName === appName);
             if (specificUrlParams) {
                 viewParamRes.decodeURLParameter(specificUrlParams.params);
             }
@@ -151,7 +149,7 @@ class MapExtentStorage {
 
     updateLocalStorage(view) {
         // urlParams of this app
-        let urlParams = {
+        const urlParams = {
             appName: appName,
             datetime: Date.now(),
             params: viewParamRes.encodeURLParameter()
@@ -166,7 +164,7 @@ class MapExtentStorage {
                     allUrlParams = [];
                     allUrlParams.push(urlParams);
                 } else {
-                    let i = allUrlParams.findIndex(x => x.appName === appName);
+                    const i = allUrlParams.findIndex(x => x.appName === appName);
                     if (i > -1) {
                         allUrlParams[i] = urlParams;
                     } else {

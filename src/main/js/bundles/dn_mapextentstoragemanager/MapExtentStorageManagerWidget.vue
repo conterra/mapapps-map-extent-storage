@@ -17,36 +17,46 @@
 -->
 <template>
     <v-container
-            fluid
-            fill-height
-            class="manage-map-extents-widget pa-0"
+        fluid
+        fill-height
+        class="manage-map-extents-widget pa-0"
     >
         <v-layout column>
             <v-flex
-                    shrink
-                    class="manage-map-extents-widget__header"
+                shrink
+                class="manage-map-extents-widget__header"
             >
-                <v-card color="light-blue" dark>
+                <v-card
+                    color="light-blue"
+                    dark
+                >
                     <v-card-text>{{ i18n.ui.description }}</v-card-text>
                 </v-card>
 
                 <v-list>
                     <template v-for="(item) in items">
-                        <v-list-tile>
-
+                        <v-list-tile :key="item.appName">
                             <v-list-tile-content>
                                 <v-list-tile-title>{{ item.appName }}</v-list-tile-title>
-                                <v-list-tile-subtitle>{{item.location}}  -  {{datetimeString(item)}}</v-list-tile-subtitle>
+                                <v-list-tile-subtitle>
+                                    {{ item.location }}  -  {{ datetimeString(item) }}
+                                </v-list-tile-subtitle>
                             </v-list-tile-content>
 
                             <v-list-tile-action>
-                                <v-btn icon ripple v-on:click="deleteItem(item.appName)" color="primary">
-                                    <v-icon color="white">icon-trashcan</v-icon>
+                                <v-btn
+                                    icon
+                                    ripple
+                                    color="primary"
+                                    @click="deleteItem(item.appName)"
+                                >
+                                    <v-icon color="white">
+                                        icon-trashcan
+                                    </v-icon>
                                 </v-btn>
                             </v-list-tile-action>
-
                         </v-list-tile>
-                        <v-divider />
+                        <v-divider :key="item.appName" />
                     </template>
                 </v-list>
             </v-flex>
@@ -59,7 +69,7 @@
     import moment from "moment";
     import ct_when from "ct/_when";
     export default {
-        name: "MapExtentStorageManager",
+        name: "map-extent-storage-manager",
         mixins: [Bindable],
         data () {
             return {
@@ -80,7 +90,8 @@
             deleteItem: function(appName) {
                 ct_when(this.windowManager.createInfoDialogWindow({
                     title: this.i18n.ui.deletionCard.title,
-                    message: this.i18n.ui.deletionCard.questionPart1 + appName + this.i18n.ui.deletionCard.questionPart2,
+                    message: this.i18n.ui.deletionCard.questionPart1 + appName +
+                        this.i18n.ui.deletionCard.questionPart2,
                     iconClass: "icon-trashcan-detailed",
                     okButtonClass: "input-error",
                     i18n: {
@@ -105,7 +116,7 @@
                 this.items = JSON.parse(localStorage.getItem('urlParams'));
             },
             datetimeString: function(item) {
-                let date = new Date(item.datetime);
+                const date = new Date(item.datetime);
                 return moment(date.toISOString()).format("DD.MM.YYYY - hh:mm:ss");
             }
         }
