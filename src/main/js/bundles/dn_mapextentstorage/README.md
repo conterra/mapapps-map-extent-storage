@@ -2,7 +2,7 @@
 This bundle saves/loads the properties of the current map extent from/in the local storage of the browser
 
 ## Usage
-**Requirement: map.apps 4.9.0**
+**Requirement: map.apps 4.9.0 or newer**
 
 1. First you need to add the bundle dn_mapextentstorage to your app.
 2. Then you can configure it.

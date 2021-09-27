@@ -2,7 +2,7 @@
 This bundle makes it possible to view and delete the saved map extents of the local storage in a dedicated widget.
 
 ## Usage
-**Requirement: map.apps 4.9.0**
+**Requirement: map.apps 4.9.0 or newer**
 
 1. First you need to add the bundle dn_mapextentstoragemanager to your app.
 2. Then you can configure it.

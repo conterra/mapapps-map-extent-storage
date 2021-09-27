@@ -3,6 +3,10 @@
     "title": "${bundleName}",
     "description": "${bundleDescription}",
     "version": "1.0.2-SNAPSHOT",
+    "vendor": "con terra GmbH",
+    "icon": {},
+    "license": {},
+    "productName": "devnet-mapapps-map-extent-storage",
     "dependencies": {
         "map-widget": "^4.9.0"
     },

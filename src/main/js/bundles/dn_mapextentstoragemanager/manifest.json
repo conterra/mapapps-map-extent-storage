@@ -2,13 +2,17 @@
     "name": "dn_mapextentstoragemanager",
     "title": "Map Extent Manager",
     "description": "This bundle makes it possible to manage the saved map extents in the local storage.",
+    "vendor": "con terra GmbH",
     "version": "1.0.2-SNAPSHOT",
+    "icon": {},
+    "license": {},
+    "productName": "devnet-mapapps-map-extent-storage-manager",
     "dependencies": {
         "apprt-core": "^4.9.0",
         "apprt-binding": "^4.9.0",
         "apprt-vue": "^4.9.0",
-        "moment": "^2.24.0",
-        "apprt-vuetify": "^4.9.0"
+        "apprt-vuetify": "^4.9.0",
+        "moment": "^2.24.0"
     },
     "layout-widgets": [
         {
