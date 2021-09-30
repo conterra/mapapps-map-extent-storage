@@ -2,7 +2,7 @@
     "name": "dn_mapextentstorage",
     "title": "${bundleName}",
     "description": "${bundleDescription}",
-    "version": "1.0.2-SNAPSHOT",
+    "version": "1.0.2",
     "vendor": "con terra GmbH",
     "icon": {},
     "license": {},
