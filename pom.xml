@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (C) 2021 con terra GmbH (info@conterra.de)
+    Copyright (C) 2020 con terra GmbH (info@conterra.de)
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.conterra.devnet</groupId>
-    <artifactId>mapapps-remote-project-blueprint</artifactId>
-    <version>4.12.0-SNAPSHOT</version>
+    <artifactId>mapapps-map-extent-storage</artifactId>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <repositories>
         <repository>
@@ -400,7 +400,7 @@
                     <properties>
                         <owner>con terra GmbH</owner>
                         <email>info@conterra.de</email>
-                        <project.inceptionYear>2021</project.inceptionYear>
+                        <project.inceptionYear>2020</project.inceptionYear>
                     </properties>
                     <includes>
                         <include>src/main/js/**/*.js</include>
@@ -526,10 +526,10 @@
         </plugins>
     </build>
     <scm>
-        <connection>scm:git:https://github.com/conterra/mapapps-remote-project-blueprint.git</connection>
-        <developerConnection>scm:git:https://github.com/conterra/mapapps-remote-project-blueprint.git
+        <connection>scm:git:https://github.com/conterra/mapapps-map-extent-storage.git</connection>
+        <developerConnection>scm:git:https://github.com/conterra/mapapps-map-extent-storage.git
         </developerConnection>
-        <url>https://github.com/conterra/mapapps-remote-project-blueprint</url>
+        <url>https://github.com/conterra/mapapps-map-extent-storage</url>
         <tag>HEAD</tag>
     </scm>
     <distributionManagement>
@@ -643,7 +643,7 @@
                                     <goal>gulp</goal>
                                 </goals>
                                 <configuration>
-                                    <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&amp;timeout=5000&amp;test=sample_helloworld/tests/all&amp;reporter=tap</arguments>
+                                    <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&amp;timeout=5000&amp;test=dn_mapextentstorage/tests/all&amp;reporter=tap</arguments>
                                 </configuration>
                             </execution>
                         </executions>
