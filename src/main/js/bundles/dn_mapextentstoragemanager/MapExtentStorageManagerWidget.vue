@@ -34,13 +34,14 @@
                 </v-card>
 
                 <v-list>
-                    <template v-for="(item) in items">
-                        <v-list-tile :key="item.appName">
+                    <template
+                        v-for="(item) in items">
+                        <v-list-tile :key="item.primaryKey">
                             <v-list-tile-content>
                                 <v-list-tile-title>{{ item.appName }}</v-list-tile-title>
-                                <v-list-tile-subtitle>
+                                <v-list-tile-sub-title>
                                     {{ item.location }}  -  {{ datetimeString(item) }}
-                                </v-list-tile-subtitle>
+                                </v-list-tile-sub-title>
                             </v-list-tile-content>
 
                             <v-list-tile-action>
@@ -56,7 +57,7 @@
                                 </v-btn>
                             </v-list-tile-action>
                         </v-list-tile>
-                        <v-divider :key="item.appName" />
+                        <v-divider :key="item.secondaryKey" />
                     </template>
                 </v-list>
             </v-flex>
@@ -81,6 +82,8 @@
             this.items = JSON.parse(localStorage.getItem('urlParams'));
             window.addEventListener("storage", this.readStorage);
             window.addEventListener("localstorageSession", this.readStorage);
+
+            this.computeUniqueKeys(this.items);
         },
         beforeDestroy() {
             window.removeEventListener("storage", this.readStorage);
@@ -118,6 +121,12 @@
             datetimeString: function(item) {
                 const date = new Date(item.datetime);
                 return moment(date.toISOString()).format("DD.MM.YYYY - hh:mm:ss");
+            },
+            computeUniqueKeys: function(items){
+                items.forEach(item => {
+                    item.primaryKey = item.appName + item.datetime;
+                    item.secondaryKey = item.appName
+                });
             }
         }
     }

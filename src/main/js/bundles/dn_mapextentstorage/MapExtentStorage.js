@@ -48,11 +48,12 @@ class MapExtentStorage {
             viewParamRes = this.viewParameterResolver;
 
             view = value;
-            if(this._properties.activeByDefault) {
+            if (this._properties.activeByDefault) {
                 this.activateSave();
             }
         });
     }
+
     deactivate() {
         this._viewWatchHandle.remove();
         this._viewWatchHandle = undefined;
@@ -64,11 +65,11 @@ class MapExtentStorage {
     }
 
     activateSave(evt) {
-        if(isActive) {
+        if (isActive) {
             return;
         }
         isActive = true;
-        if(evt && evt.tool && evt.tool.id === "mapExtentStorageToggleTool") {
+        if (evt && evt.tool && evt.tool.id === "mapExtentStorageToggleTool") {
             this.windowManager.createInfoDialogWindow({
                 title: "",
                 message: i18n.info.activationDialog,
@@ -97,6 +98,7 @@ class MapExtentStorage {
             this.watchChangesInView(value);
         });
     }
+
     deactivateSave() {
         this.windowManager.createInfoDialogWindow({
             title: "",
@@ -140,7 +142,7 @@ class MapExtentStorage {
             this._viewWatchHandle.remove();
         }
         this._viewWatchHandle = view.watch("stationary", () => {
-            if(view.stationary) {
+            if (view.stationary) {
                 this.updateLocalStorage(view);
             }
         });
@@ -195,7 +197,7 @@ class MapExtentStorage {
                 query: {
                     f: "json",
                     outFields: "PlaceName",
-                    location: JSON.stringify(view.center.toJSON()),
+                    location: JSON.stringify(view?.center?.toJSON()),
                     category: category,
                     maxLocations: 1,
                     //langCode is not supported by Locator, therefore we send the request directly
@@ -205,8 +207,9 @@ class MapExtentStorage {
                 const candidates = result.candidates;
                 if (!candidates || candidates.length === 0) {
                     resolve(defaultName);
+                } else {
+                    resolve(candidates[0]?.attributes?.PlaceName);
                 }
-                resolve(candidates[0].attributes.PlaceName);
             }, error => {
                 console.warn("Name cannot be resolved - using default instead.", error);
                 resolve(defaultName);
