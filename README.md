@@ -1,3 +1,4 @@
+⚠️ This bundle is no longer in active development.
 # Map extent storage
 
 The Map extent storage bundle saves the current map extent of your app and loads the last one when the app is opened again.
